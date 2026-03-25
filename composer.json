@@ -1,0 +1,31 @@
+{
+    "name": "sangkan/wiji",
+    "description": "Wiji (ꦮꦶꦗꦶ) — Optimized Unique Identifier. 128-bit, µs-precision, monotonic, multi-format. By Sangkan.",
+    "type": "library",
+    "keywords": ["wiji", "uuid", "ulid", "unique-id", "identifier", "timestamp", "monotonic", "sangkan"],
+    "homepage": "https://sangkan.dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sangkan",
+            "email": "hello@sangkan.dev",
+            "homepage": "https://sangkan.dev"
+        }
+    ],
+    "require": {
+        "php": ">=7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sangkan\\Wiji\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sangkan\\Wiji\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

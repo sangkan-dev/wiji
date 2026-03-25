@@ -1,0 +1,31 @@
+{
+  "name": "@sangkan/wiji",
+  "version": "1.0.0",
+  "description": "Wiji (ꦮꦶꦗꦶ) — Optimized Unique Identifier. 128-bit, µs-precision, monotonic, multi-format. By Sangkan.",
+  "main": "src/index.js",
+  "exports": {
+    ".": {
+      "require": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "scripts": {
+    "test": "jest --no-coverage",
+    "bench": "node benchmark.js"
+  },
+  "keywords": ["wiji", "uuid", "ulid", "unique-id", "identifier", "timestamp", "monotonic", "sangkan"],
+  "author": "Sangkan <hello@sangkan.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sangkan-dev/wiji.git"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "uuid": "^9.0.0",
+    "ulid": "^2.3.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
