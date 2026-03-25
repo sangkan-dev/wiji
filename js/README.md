@@ -1,14 +1,3 @@
-# Wiji monorepo
-
-This repository contains:
-
-- `js/` — npm package: `@sangkan/wiji`
-- `php/` — Composer package: `sangkan/wiji`
-
-For usage docs, see:
-
-- `js/README.md`
-
 # ꦮꦶꦗꦶ Wiji
 
 This package lives in a monorepo. See the root README for full documentation.
@@ -76,12 +65,12 @@ wiji.hex()          // → '019d2257972f1a4e36ea81d64ed08dfc'
 
 // Parse
 wiji.parse('01JKM5WXR9P003K1F4Q8XTBZN2')
-// → { timestamp_us: 1774397000000000, timestamp_ms: 1774397000000,
+// → { timestamp_us: 1774397000000000n, timestamp_ms: 1774397000000,
 //     date: Date, sequence: 42, version: 1, random: Uint8Array(7) }
 
 // Utilities
 wiji.isValid('01JKM5WXR9P003K1F4Q8XTBZN2') // → true
-wiji.timestampUs('01JKM5WXR9P003K1F4Q8XTBZN2') // → microseconds
+wiji.timestampUs('01JKM5WXR9P003K1F4Q8XTBZN2') // → microseconds (bigint)
 wiji.compare(a, b)  // → -1 | 0 | 1
 wiji.factory()      // → isolated generator instance
 ```

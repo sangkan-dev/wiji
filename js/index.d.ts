@@ -6,7 +6,7 @@
 
 export interface WijiParsed {
   /** Microseconds since Unix epoch */
-  timestamp_us: number;
+  timestamp_us: bigint;
   /** Milliseconds since Unix epoch */
   timestamp_ms: number;
   /** JavaScript Date object (millisecond precision) */
@@ -15,7 +15,7 @@ export interface WijiParsed {
   sequence: number;
   /** Version field — always 1 for Wiji v1 */
   version: number;
-  /** 7 bytes containing version nibble + 52-bit random node */
+  /** 7 bytes containing random-high-nibble + 48-bit random tail */
   random: Uint8Array;
 }
 
@@ -57,7 +57,7 @@ export interface WijiGenerator {
    * Compare two Wiji strings chronologically.
    * Returns -1, 0, or 1. Safe as Array.sort() comparator.
    */
-  compare(a: string, b: string): -1 | 0 | 1;
+  compare(a: string | Uint8Array, b: string | Uint8Array): -1 | 0 | 1;
 
   /**
    * Create a new isolated generator instance with its own random node
@@ -67,7 +67,9 @@ export interface WijiGenerator {
   factory(): WijiGenerator;
 }
 
+export function createWiji(): WijiGenerator;
+
 declare const wiji: WijiGenerator;
 export default wiji;
 export { wiji };
-export { wiji as createWiji };
+export { createWiji };

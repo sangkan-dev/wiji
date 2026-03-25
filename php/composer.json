@@ -5,6 +5,9 @@
     "keywords": ["wiji", "uuid", "ulid", "unique-id", "identifier", "timestamp", "monotonic", "sangkan"],
     "homepage": "https://sangkan.dev",
     "license": "MIT",
+    "require": {
+        "php": ">=7.3"
+    },
     "authors": [
         {
             "name": "Sangkan",
@@ -12,9 +15,6 @@
             "homepage": "https://sangkan.dev"
         }
     ],
-    "require": {
-        "php": ">=7.3"
-    },
     "autoload": {
         "psr-4": {
             "Sangkan\\Wiji\\": "src/"
@@ -24,6 +24,9 @@
         "psr-4": {
             "Sangkan\\Wiji\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "php tests/WijiTest.php"
     },
     "config": {
         "sort-packages": true

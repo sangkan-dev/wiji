@@ -2,16 +2,23 @@
   "name": "@sangkan/wiji",
   "version": "1.0.0",
   "description": "Wiji (ꦮꦶꦗꦶ) — Optimized Unique Identifier. 128-bit, µs-precision, monotonic, multi-format. By Sangkan.",
-  "main": "src/index.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./src/index.js",
-      "default": "./src/index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
-    "test": "jest --no-coverage",
-    "bench": "node benchmark.js"
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean --out-dir dist --cjsInterop",
+    "test": "npm run build && jest --no-coverage",
+    "bench": "node bench/benchmark.cjs",
+    "prepublishOnly": "npm test"
   },
   "keywords": ["wiji", "uuid", "ulid", "unique-id", "identifier", "timestamp", "monotonic", "sangkan"],
   "author": "Sangkan <hello@sangkan.dev>",
@@ -20,8 +27,16 @@
     "type": "git",
     "url": "https://github.com/sangkan-dev/wiji.git"
   },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
   "devDependencies": {
+    "@types/node": "^22.0.0",
     "jest": "^29.7.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
     "uuid": "^9.0.0",
     "ulid": "^2.3.0"
   },

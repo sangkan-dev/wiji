@@ -1,5 +1,5 @@
 "use strict";
-const wiji = require("./src/index");
+const wiji = require("../dist/index.cjs");
 let uuidv4, ulid;
 try { uuidv4 = require("uuid").v4; } catch(_) {}
 try { ulid = require("ulid").ulid; } catch(_) {}
@@ -56,7 +56,7 @@ console.log("\n── Microsecond precision check ──────────
 const ids = Array.from({ length: 100 }, () => wiji());
 const timestamps = ids.map(id => wiji.timestampUs(id));
 const uniqueTs = new Set(timestamps);
-const subMsVariants = timestamps.filter((ts, i) => i > 0 && ts - timestamps[i-1] < 1000 && ts > timestamps[i-1]);
+const subMsVariants = timestamps.filter((ts, i) => i > 0 && ts - timestamps[i-1] < 1000n && ts > timestamps[i-1]);
 console.log(`  Unique µs timestamps in 100 IDs: ${uniqueTs.size}`);
 console.log(`  Sub-millisecond increments observed: ${subMsVariants.length}`);
 

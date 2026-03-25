@@ -1,0 +1,6 @@
+js/node_modules/
+js/dist/
+js/.tsup/
+php/vendor/
+*.log
+
