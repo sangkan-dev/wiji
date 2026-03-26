@@ -47,9 +47,9 @@
 		<div class="mt-3 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm">
 			<a
 				class="text-gold-dim underline-offset-2 transition-colors hover:text-gold-bright"
-				href="https://www.npmjs.com/package/@sangkan/wiji"
+				href="https://www.npmjs.com/package/@sangkan-dev/wiji"
 			>
-				npm<span class="text-ash"> — </span><code class="text-ash">@sangkan/wiji</code>
+				npm<span class="text-ash"> — </span><code class="text-ash">@sangkan-dev/wiji</code>
 			</a>
 			<a
 				class="text-gold-dim underline-offset-2 transition-colors hover:text-gold-bright"
@@ -127,9 +127,9 @@
 <section class="mt-14 rounded border border-andesite-lighter bg-andesite p-6">
 	<p class="font-mono text-xs tracking-widest text-gold-dim uppercase">Quickstart (JS/TS)</p>
 	<pre
-		class="mt-4 overflow-auto rounded bg-andesite-light p-4 text-xs text-[#e0e0e0]"><code>npm install @sangkan/wiji
+		class="mt-4 overflow-auto rounded bg-andesite-light p-4 text-xs text-[#e0e0e0]"><code>npm install @sangkan-dev/wiji
 
-import wiji from '@sangkan/wiji';
+import wiji from '@sangkan-dev/wiji';
 
 const id = wiji();          // Base32 (26)
 const bin = wiji.binary();  // Uint8Array(16)

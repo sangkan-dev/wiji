@@ -56,12 +56,12 @@ Catatan: tabel ini hanya memberi konteks trade-off. Wiji tidak mencoba “mengga
 ### JavaScript / Node.js / Bun / Deno
 
 ```bash
-npm install @sangkan/wiji
+npm install @sangkan-dev/wiji
 ```
 
 ```js
-import wiji from '@sangkan/wiji';
-// atau: const wiji = require('@sangkan/wiji');
+import wiji from '@sangkan-dev/wiji';
+// atau: const wiji = require('@sangkan-dev/wiji');
 
 // Generate
 wiji()              // → '01JKM5WXR9P003K1F4Q8XTBZN2'
@@ -175,7 +175,7 @@ Measured on Node.js 22, PHP 8.3 (single core):
 
 | Bahasa | Package | Status |
 |---|---|---|
-| JavaScript / TypeScript | `@sangkan/wiji` | ✅ Stable |
+| JavaScript / TypeScript | `@sangkan-dev/wiji` | ✅ Stable |
 | PHP | `sangkan/wiji` | ✅ Stable |
 | Python | `sangkan-wiji` | 🔜 Coming soon |
 | Go | `github.com/sangkan-dev/wiji-go` | 🔜 Coming soon |

@@ -309,7 +309,7 @@ function createWiji(): WijiGenerator {
 
 const wiji = createWiji();
 
-// CJS convenience: make `require('@sangkan/wiji')` return the callable generator.
+// CJS convenience: make `require('@sangkan-dev/wiji')` return the callable generator.
 // (In ESM builds, `module` is undefined and this is a no-op.)
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
   module.exports = Object.assign(wiji, { wiji, createWiji, default: wiji });

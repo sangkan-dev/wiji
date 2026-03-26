@@ -1,5 +1,5 @@
 {
-  "name": "@sangkan/wiji",
+  "name": "@sangkan-dev/wiji",
   "version": "1.0.0",
   "description": "Wiji (ꦮꦶꦗꦶ) — Optimized Unique Identifier. 128-bit, µs-precision, monotonic, multi-format. By Sangkan.",
   "type": "module",

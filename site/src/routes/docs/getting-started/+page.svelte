@@ -4,11 +4,11 @@
 
 	<div class="prose prose-invert mt-8 max-w-none font-mono text-sm text-ash">
 		<h2>Install</h2>
-		<pre><code>npm install @sangkan/wiji
+		<pre><code>npm install @sangkan-dev/wiji
 composer require sangkan/wiji</code></pre>
 
 		<h2>Generate (JS/TS)</h2>
-		<pre><code>import wiji from '@sangkan/wiji';
+		<pre><code>import wiji from '@sangkan-dev/wiji';
 
 const id = wiji();          // Base32 (26)
 const bin = wiji.binary();  // Uint8Array(16)

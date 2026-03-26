@@ -4,7 +4,7 @@
 
 	<div class="prose prose-invert mt-8 max-w-none font-mono text-sm text-ash">
 		<h2>JavaScript / TypeScript</h2>
-		<pre><code>import wiji from '@sangkan/wiji';
+		<pre><code>import wiji from '@sangkan-dev/wiji';
 
 wiji()              // string (26)
 wiji.binary()       // Uint8Array(16)
