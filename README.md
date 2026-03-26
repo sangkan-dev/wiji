@@ -7,12 +7,12 @@ Website docs: **`wiji.sangkan.dev`**.
 ## Packages
 
 - **JavaScript / TypeScript (npm)**: `js/` → `@sangkan-dev/wiji`
-- **PHP (Composer)**: `php/` → `sangkan/wiji`
+- **PHP (Composer)**: `sangkan/wiji` — manifest [`composer.json`](composer.json) di root repo (autoload ke `php/src/`).
 
 ## Quick start
 
 - **JS/TS**: lihat `js/README.md`
-- **PHP**: lihat `php/src/Wiji.php` dan `php/tests/WijiTest.php`
+- **PHP**: lihat `php/src/Wiji.php` dan `php/tests/WijiTest.php`. Untuk kontributor: dari root repo jalankan `composer install` lalu `composer test`.
 
 Forged at [Sangkan](https://sangkan.dev) — Building the Source.
 
@@ -186,9 +186,22 @@ Measured on Node.js 22, PHP 8.3 (single core):
 
 ---
 
+## Composer (Packagist) — rilis
+
+`composer.json` untuk paket `sangkan/wiji` berada di **root** monorepo ini agar [Packagist](https://packagist.org) bisa membacanya.
+
+1. Commit & push perubahan ke GitHub (`sangkan-dev/wiji`).
+2. Buat tag semver dan push, contoh: `git tag v1.0.0` lalu `git push origin v1.0.0` — versi di Composer mengikuti tag (`v` di depan opsional; Packagist umumnya mengenali `v1.0.0` / `1.0.0`).
+3. Di Packagist: **Submit** → masukkan URL repo `https://github.com/sangkan-dev/wiji`.
+4. Ikuti langkah **GitHub webhook** di Packagist agar tag/commit baru terindeks otomatis.
+
+Setelah terdaftar, pengguna memasang dengan: `composer require sangkan/wiji`.
+
+---
+
 ## Specification
 
-Lihat [`spec/WIJI_SPEC.md`](spec/WIJI_SPEC.md) untuk spesifikasi lengkap, termasuk bit layout, byte layout, test vectors, dan panduan implementasi di bahasa lain.
+Lihat [`WIJI_SPEC.md`](WIJI_SPEC.md) untuk spesifikasi lengkap, termasuk bit layout, byte layout, test vectors, dan panduan implementasi di bahasa lain.
 
 Spec dirilis di bawah [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) — public domain. Siapapun boleh mengimplementasikan Wiji tanpa batasan.
 
