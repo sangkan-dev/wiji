@@ -1,22 +1,37 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
+	import { page } from '$app/state';
+	import { SITE_ORIGIN } from '$lib/site';
 
 	let { children } = $props();
+
+	const title = 'ꦮꦶꦗꦶ Wiji — time-ordered identifiers';
+	const description =
+		'Wiji (ꦮꦶꦗꦶ) — 128-bit time-ordered identifier: µs timestamp, monotonic sequence, multi-format (Base32/binary/uuid-like/hex).';
+	const ogDescription =
+		'Timestamp-first, monotonic within a generator, DB-friendly ordering, and deterministic encoding.';
+	const ogImageAlt = 'Wiji — time-ordered identifiers by Sangkan';
+
+	const canonicalUrl = $derived(`${SITE_ORIGIN}${page.url.pathname}`);
+	const ogImageUrl = `${SITE_ORIGIN}/og-wiji.png`;
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>ꦮꦶꦗꦶ Wiji — time-ordered identifiers</title>
-	<meta
-		name="description"
-		content="Wiji (ꦮꦶꦗꦶ) — 128-bit time-ordered identifier: µs timestamp, monotonic sequence, multi-format (Base32/binary/uuid-like/hex)."
-	/>
-	<meta property="og:title" content="Wiji — time-ordered identifiers" />
-	<meta
-		property="og:description"
-		content="Timestamp-first, monotonic within a generator, DB-friendly ordering, and deterministic encoding."
-	/>
+	<link rel="canonical" href={canonicalUrl} />
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={ogDescription} />
+	<meta property="og:url" content={canonicalUrl} />
+	<meta property="og:image" content={ogImageUrl} />
+	<meta property="og:image:alt" content={ogImageAlt} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={ogDescription} />
+	<meta name="twitter:image" content={ogImageUrl} />
 </svelte:head>
 
 <div class="min-h-screen">

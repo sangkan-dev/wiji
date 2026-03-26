@@ -5,7 +5,7 @@ This site is a **static SvelteKit build** (SSG) using `@sveltejs/adapter-static`
 ## 1) Cloudflare Pages project
 
 - **Connect**: GitHub → `sangkan-dev/wiji`
-- **Root directory**: `site`
+- **Root directory**: `site` (Cloudflare clones the full repo; [`WIJI_SPEC.md`](../WIJI_SPEC.md) must remain one level above `site/` so `/docs/spec` can prerender from it)
 - **Build command**: `npm ci && npm run build`
 - **Build output directory**: `build`
 

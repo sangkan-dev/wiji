@@ -1,3 +1,15 @@
+<script lang="ts">
+	import BenchmarkBars from '$lib/BenchmarkBars.svelte';
+</script>
+
+<svelte:head>
+	<title>Benchmarks | Wiji</title>
+	<meta
+		name="description"
+		content="How to run Wiji JavaScript benchmarks and sample throughput (Node) for Wiji, UUID, and ULID."
+	/>
+</svelte:head>
+
 <section class="py-6">
 	<p class="font-mono text-xs tracking-widest text-gold-dim uppercase">Docs</p>
 	<h1 class="mt-3 font-heading text-3xl font-semibold text-gold-bright">Benchmarks</h1>
@@ -14,10 +26,12 @@ Wiji (binary): ~1.57M IDs/sec
 UUID v4      : ~3.9M IDs/sec
 ULID (lib)   : ~29k IDs/sec</code></pre>
 
+		<BenchmarkBars />
+
 		<p>
-			Angka akan berubah tergantung CPU, Node version, dan implementasi library pembanding. Fokus utama Wiji adalah
-			<strong>ordering</strong> (time-ordered + monotonic per generator) dan format yang deterministik, bukan sekadar throughput murni.
+			Numbers change with CPU, Node version, and comparison libraries. Wiji prioritizes
+			<strong>ordering</strong> (time-ordered + monotonic per generator) and deterministic encodings, not raw
+			throughput alone.
 		</p>
 	</div>
 </section>
-
