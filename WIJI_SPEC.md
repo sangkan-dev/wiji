@@ -193,7 +193,10 @@ wiji.factory()   → new isolated generator instance (own random node + sequence
 
 ---
 
-## 10. Comparison Table
+## 10. Reference Comparison (Informative)
+
+This table is **informative only**. Wiji is specified as a deterministic, timestamp-first,
+monotonic identifier format; it does not attempt to “replace” any existing standard.
 
 | Property            | UUID v4 | UUID v7 | ULID    | KSUID  | Snowflake | **Wiji v1** |
 |---------------------|---------|---------|---------|--------|-----------|-------------|

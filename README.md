@@ -1,26 +1,24 @@
-# Wiji monorepo
+# ꦮꦶꦗꦶ Wiji — monorepo
 
-This repository contains:
+**Wiji** adalah 128-bit **time-ordered identifier** (timestamp-first) untuk sistem yang butuh urutan yang rapi di database, monotonic generator, dan ekstraksi waktu presisi microsecond (µs).
 
-- `js/` — npm package: `@sangkan/wiji`
-- `php/` — Composer package: `sangkan/wiji`
+Website docs: **`wiji.sangkan.dev`**.
 
-For usage docs, see:
+## Packages
 
-- `js/README.md`
+- **JavaScript / TypeScript (npm)**: `js/` → `@sangkan/wiji`
+- **PHP (Composer)**: `php/` → `sangkan/wiji`
 
-# ꦮꦶꦗꦶ Wiji
+## Quick start
 
-This package lives in a monorepo. See the root README for full documentation.
-
-# ꦮꦶꦗꦶ Wiji
-
-> *Benih* — dalam bahasa Jawa, wiji adalah benih, asal-usul dari segala sesuatu.
-> Setiap record dalam sistemmu dimulai dari sebuah Wiji.
-
-**Wiji** adalah 128-bit unique identifier yang dirancang untuk mengalahkan UUID v4, UUID v7, ULID, KSUID, dan Snowflake secara bersamaan.
+- **JS/TS**: lihat `js/README.md`
+- **PHP**: lihat `php/src/Wiji.php` dan `php/tests/WijiTest.php`
 
 Forged at [Sangkan](https://sangkan.dev) — Building the Source.
+
+## Deploy (Cloudflare Pages)
+
+Website lives in `site/`. Deployment notes: `site/DEPLOY_CLOUDFLARE_PAGES.md`.
 
 ---
 

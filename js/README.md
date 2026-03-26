@@ -1,13 +1,17 @@
 # ꦮꦶꦗꦶ Wiji
 
-This package lives in a monorepo. See the root README for full documentation.
+This package lives in a monorepo. For the website docs, see `wiji.sangkan.dev`.
 
 # ꦮꦶꦗꦶ Wiji
 
 > *Benih* — dalam bahasa Jawa, wiji adalah benih, asal-usul dari segala sesuatu.
 > Setiap record dalam sistemmu dimulai dari sebuah Wiji.
 
-**Wiji** adalah 128-bit unique identifier yang dirancang untuk mengalahkan UUID v4, UUID v7, ULID, KSUID, dan Snowflake secara bersamaan.
+**Wiji** adalah 128-bit **time-ordered identifier** (timestamp-first) untuk sistem yang butuh:
+- insert locality yang baik untuk index database (B+ tree / B-tree),
+- urutan yang **monotonic** dalam satu generator,
+- ekstraksi waktu (timestamp) dengan presisi **microsecond (µs)**,
+- output multi-format: Base32 (26), binary (16 bytes), uuid-like, dan hex.
 
 Forged at [Sangkan](https://sangkan.dev) — Building the Source.
 
@@ -15,7 +19,7 @@ Forged at [Sangkan](https://sangkan.dev) — Building the Source.
 
 ## Mengapa Wiji?
 
-| Properti | UUID v4 | UUID v7 | ULID | KSUID | **Wiji v1** |
+| Properti (ringkas) | UUID v4 | UUID v7 | ULID | KSUID | **Wiji v1** |
 |---|---|---|---|---|---|
 | Presisi timestamp | — | 1 ms | 1 ms | 1 detik | **1 µs** |
 | B+ tree friendly | ❌ | ✅ | ✅ | ✅ | ✅ |
@@ -25,6 +29,8 @@ Forged at [Sangkan](https://sangkan.dev) — Building the Source.
 | Zero dependencies | ❌ | ❌ | ❌ | ❌ | ✅ |
 | String length | 36 | 36 | 26 | 27 | **26** |
 | Valid hingga | — | 10889 | 10889 | 2106 | **4253** |
+
+Catatan: tabel ini hanya memberi konteks trade-off. Wiji tidak mencoba “menggantikan” standar yang sudah ada; Wiji fokus pada sifat **time-order + monotonic + multi-format**.
 
 ---
 
